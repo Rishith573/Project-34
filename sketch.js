@@ -8,12 +8,11 @@ var hero, heroImg, villian, villianImg, bgImg;
 function preload() {
   
   villianImg = loadImage("images/villian.png");
-  bgImg = loadImage("images/bgImg.jpg");
-  heroImg = loadImage("images/hero.gif")
+  bgImg = loadImage("images/bg.jpg");
 }
 
 function setup() {
-  createCanvas(3000, 800);
+  createCanvas(1250, 600);
 // creating engine
   engine = Engine.create();
 
@@ -22,6 +21,8 @@ function setup() {
 
   world = engine.world;
   // create sprites here
+
+  hero = new Hero(100, 200, 50, 50);
 
 }
 
