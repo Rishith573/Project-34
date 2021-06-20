@@ -3,12 +3,12 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
-var hero, heroImg, villian, villianImg, bgImg;
+var hero, heroImg, ground, villian, villianImg, bgImg;
 
 function preload() {
   
   villianImg = loadImage("images/villian.png");
-  bgImg = loadImage("images/bg.jpg");
+  bgImg = loadImage("images/clouds.jpg");
 }
 
 function setup() {
@@ -22,12 +22,21 @@ function setup() {
   world = engine.world;
   // create sprites here
 
-  hero = new Hero(100, 200, 50, 50);
+  hero = new Hero(150, 300, 50);
+  ground = new Ground(500, 450, 1000, 20);
+
+  
 
 }
 
 function draw() {
   background(bgImg);
+
+  textSize(20);
+  text("Position: " + mouseX + ", " + mouseY, 50, 50);
+
+  hero.display();
+  ground.display();
 
 }
 

@@ -1,21 +1,19 @@
 class Hero{
-    constructor(x, y, width, height){
+    constructor(x, y, r){
         var options = {
-         restitution : 0, 
-         friction : 1, 
-         isStatic : false 
+         density: 1,
+         frictionAir: 1
         };
-
-        this.body = Bodies.circle(x, y, width, height, options);
-        this.width = width;
-        this.height = height;
+        this.x = x;
+        this.y = y;
+        this.r = r;
         this.image = loadImage("images/hero.gif");
+        this.body = Bodies.circle(this.x, this.y, (this.r)/2, options);
         World.add(world, this.body)
     }
 
     display(){
         imageMode(CENTER);
-        var pos = this.body.position;
-        image(this.image, pos.x, pos.y, this.radius);
+        image(this.image, this.x, this.y, this.r*3, this.r*3);
     }
 }
