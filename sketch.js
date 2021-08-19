@@ -25,10 +25,14 @@ function setup() {
   world = engine.world;
   // create sprites here
 
-  rope = new Rope(hero, {x:635, y:3})
+  
 
   hero = new Hero(600, 300, 70);
   villian = new Monster(150, 300, 50)
+
+  rope = new Rope(hero.body, {x:635, y:3});
+
+
   ground = new Ground(600, 450, 700, 20);
   block1 = new Block(300, 420, 30, 30);
   block2 = new Block(300, 370, 30, 30);
@@ -53,8 +57,6 @@ function setup() {
   block19 = new Block(400, 120, 30, 30);
   block20 = new Block(400, 70, 30, 30);
   block21 = new Block(400, 20, 30, 30);
-
-  bgImg.scale = 0.5
 }
 
 function draw() {
@@ -91,3 +93,6 @@ function draw() {
 
 }
 
+function mouseDragged(){
+  Matter.Body.setPosition(hero.body, {x:mouseX, y:mouseY})
+}

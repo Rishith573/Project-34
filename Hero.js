@@ -14,6 +14,6 @@ class Hero{
 
     display(){
         imageMode(CENTER);
-        image(this.image, this.x, this.y, this.r*3, this.r*3);
+        image(this.image, this.body.position.x, this.body.position.y, this.r*3, this.r*3);
     }
 }
