@@ -1,8 +1,7 @@
 class Monster{
     constructor(x, y, r){
         var options = {
-         density: 1,
-         frictionAir: 50
+         density: 0.0005
         };
         this.x = x;
         this.y = y;
@@ -13,7 +12,9 @@ class Monster{
     }
 
     display(){
+        push()
         imageMode(CENTER);
         image(this.image, this.body.position.x, this.body.position.y, this.r*3, this.r*3);
+        pop()
     }
 }

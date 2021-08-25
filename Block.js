@@ -3,7 +3,7 @@ class Block {
       var options = {
           restitution : 0,
           friction : 0.25,
-          density : 0.001
+          density : 0.05
       };
       this.body = Bodies.rectangle(x,y,width,height,options);
       this.width = width;

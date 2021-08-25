@@ -27,13 +27,13 @@ function setup() {
 
   
 
-  hero = new Hero(600, 300, 70);
-  villian = new Monster(150, 300, 50)
+  hero = new Hero(600, 300, 75);
+  villian = new Monster(150, 150, 50)
 
-  rope = new Rope(hero.body, {x:635, y:3});
+  rope = new Rope(hero.body, {x:775, y:260});
 
 
-  ground = new Ground(600, 450, 700, 20);
+  ground = new Ground(600, 450, 2000, 20);
   block1 = new Block(300, 420, 30, 30);
   block2 = new Block(300, 370, 30, 30);
   block3 = new Block(300, 320, 30, 30);
@@ -62,8 +62,8 @@ function setup() {
 function draw() {
   background(bgImg);
 
-  textSize(20);
-  text("Position: " + mouseX + ", " + mouseY, 50, 50);
+  //textSize(20);
+  //text("Position: " + mouseX + ", " + mouseY, 50, 50);
 
   hero.display();
   rope.display();
@@ -95,4 +95,8 @@ function draw() {
 
 function mouseDragged(){
   Matter.Body.setPosition(hero.body, {x:mouseX, y:mouseY})
+}
+
+function mouseReleased(){
+  rope.fly();
 }

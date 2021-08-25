@@ -1,8 +1,7 @@
 class Hero{
     constructor(x, y, r){
         var options = {
-         density: 1,
-         frictionAir: 1
+         density: 1
         };
         this.x = x;
         this.y = y;
@@ -13,7 +12,9 @@ class Hero{
     }
 
     display(){
+        push()
         imageMode(CENTER);
         image(this.image, this.body.position.x, this.body.position.y, this.r*3, this.r*3);
+        pop()
     }
 }
